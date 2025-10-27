@@ -1,0 +1,4 @@
+3
+6f Montag -5 2 23
+7g Montag -4 27 29
+8h Dienstag -1000 5000000 31

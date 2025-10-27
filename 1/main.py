@@ -1,6 +1,6 @@
 # OPEN INPUT
 
-with open('./inp/ball07.txt', 'r') as f:
+with open('./inp/ball00.txt', 'r') as f:
 	inp = f.read().split('\n')
 	inp.remove('')
 	inp.pop(0)  # Don't need total number of hours

@@ -1,0 +1,10 @@
+\babel@toc {german}{}\relax 
+\contentsline {section}{\numberline {1}Lösungsidee}{1}{}%
+\contentsline {section}{\numberline {2}Umsetzung}{1}{}%
+\contentsline {section}{\numberline {3}Beispiele}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Beispiele der Beispielseite}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Eigene Beispiele}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Beispiel ball\_eig00}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Beispiel ball\_eig01}{2}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Beispiel ball\_eig02}{2}{}%
+\contentsline {section}{\numberline {4}Quellcode}{3}{}%

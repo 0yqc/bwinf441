@@ -1,0 +1,4 @@
+3
+abc Montag 10 13 2
+bcd Montag 11 14 3
+abc Montag 12 13 5

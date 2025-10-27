@@ -1,0 +1,6 @@
+5
+1a Tuesday 12 15 7
+2b Lunes 14 17 11
+3c abcdefgh 11 18 13
+4d Tuesday 13 17 17
+5e abcdefgh 17 19 19
