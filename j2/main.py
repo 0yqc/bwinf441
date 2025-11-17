@@ -1,4 +1,4 @@
-with open('./inp/silben01.txt', 'r') as f:
+with open('./inp/silben08.txt', 'r') as f:
 	txt = f.read()
 	f.close()
 
@@ -22,7 +22,6 @@ for w in txt.strip().split(' '):
 	wgen = ''
 	w = [c for c in w]
 	for i in range(len(w)):
-		sp = False
 		im2 = getitem(w, i - 2)
 		im1 = getitem(w, i - 1)
 		i0 = getitem(w, i)
@@ -34,13 +33,15 @@ for w in txt.strip().split(' '):
 			continue
 		# rule 4
 		if i0 in voc and not (i1 in con and i2 in con):
-			sp = True
+			wgen += i0 + '-'
+			continue
 		elif i0 in voc:
 			wgen += i0
 			continue
 		# rule 3
 		if i0 in con and i1 in con and i2 in con: # split after first con
-			sp = True
+			wgen += i0 + '-'
+			continue
 		if im1 in con and i0 in con and i1 in con: # no split after second con
 			wgen += i0
 			continue
@@ -50,12 +51,9 @@ for w in txt.strip().split(' '):
 			continue
 		# rule 1
 		if i0 in con and i1 in con:
-			sp = True
-		
-		if sp == True:
 			wgen += i0 + '-'
-		else:
-			wgen += i0
+			continue
+		wgen += i0 # if no rule added a split
 	gen += wgen + punctuation + ' '
 			
 gen = gen.strip()

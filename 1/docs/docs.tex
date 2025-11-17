@@ -1,0 +1,256 @@
+\documentclass[a4paper]{article}
+\title{44. Bundeswettbewerb Informatik - 1. Runde / 1. Aufgabe}
+\author{Luna Hagemann (Team-ID 00008 (Einzelteam), Teilnahme-ID 78245)}
+
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage[german]{babel}
+\usepackage{listings,color,svg,multicol}
+
+\definecolor{gray}{rgb}{.25,.25,.25}
+\definecolor{blue}{rgb}{0,0,.5}
+\definecolor{green}{rgb}{0,.5,0}
+\definecolor{purple}{rgb}{.5,0,1}
+\lstdefinestyle{main}{
+	language=Python,
+	%
+	tabsize=4,
+	frame=single,
+	%
+	numbers=left,
+	numberstyle=\small,
+	numberstyle=\color{gray},
+	firstnumber=1,
+	stepnumber=1,
+	%
+	commentstyle=\color{green},
+	keywordstyle=\color{purple},
+	stringstyle=\color{blue},
+	%
+	breaklines=true,
+}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\section{Lösungsideen}
+	\subsection{1. Idee: string-comparison}
+	\begin{samepage}
+	Zuerst hatte ich die Idee den string genauer anzugucken, um dort direkt eine Drehfreudigkeit abzuleiten. So war meine Idee, den string zu spiegeln, wobei öffnende Klammern zu schließenden Klammern sowie schließende Klammern zu öffnenden Klammern umgewandelt werden sollten und dann der string Zeichen für Zeichen gespiegelt werden sollte. Dann wollte ich einen Vergleich durchführen, ob diese strings zu 100\% übereinstimmen. Dieses Konzept funktioniert zwar bei einfachen Bäumen, jedoch nicht bei allen Bäumen wie im folgenden Beispiel, wo der Baum zwar drehfreudig ist, aber von dieser Methode nicht so gekennzeichnet werden würde:
+
+	\begin{center}
+	\begin{tabular}{rl}
+		normal: & \lstinline[style=main]|(((()())(()())(()()))((()()())(()()())))| \\
+		gedreht: & \lstinline[style=main]|(((()()())(()()()))((()())(()())(()())))|
+	\end{tabular}
+	\includesvg[width=\columnwidth]{./img/eig01.svg}
+	\end{center}
+	\end{samepage}
+
+	\subsection{2. Idee: rekursive Funktion}
+	Deswegen musste der etwas komplexere Weg genommen werden, die Größe aller Blätter zu errechnen.
+
+	\subsubsection{Erkennung der Drehfreudigkeit}
+	Da die Eingabedatei nahezu einem Python tuple entspricht, habe ich zuerst die Eingabe in einen tuple umgewandelt. Durch diesen tuple kann ich nun rekursiv durchgehen, wobei ich immer sobald ich an einem Blatt bin die Breite und Tiefe dieses Blattes notiere, bzw. zurück gebe. Dadurch gibt es dann am Ende eine Reihenfolge an Blättern, zusammen mit ihrer Breite und Tiefe. Wenn diese Liste nun gespiegelt wird und die gleiche Liste herauskommt, ist dies das Gleiche wie eine Drehung, wodurch der Baum dann drehfreudig ist. Ist dies nicht der Fall, ist der Baum dementsprechend nicht drehfreudig.
+
+	\paragraph{Warum die Tiefe ausreichend ist}
+	\label{tiefe_ausreichend}
+	Obwohl die Höhe übereinstimmen muss, damit der Baum drehfreudig ist, reicht es ebenfalls die Tiefe des Blattes zu bestimmen und diese als Alternative für die Höhe verwenden. Die Höhe von Blättern kann auch durch die maximale Tiefe minus der Tiefe des aktuellen Blattes ausgerechnet werden
+	($ max(t_{ \textup{Blätter} }) - t_{ \textup{Blatt} } = h_{ \textup{Blatt} } $)
+	dies kann auch für das gegenüberliegende Blatt von dem gedrehten Baum errechnet werden.
+	$ h_{ \textup{Blatt} } \stackrel{?}{=} h^{ \prime }_{ \textup{Blatt} } $
+	bestimmt, ob das Blatt drehfreudig ist. Nun können wir dafür die Formeln von oben einsetzen:
+
+	\begin{equation}
+		max(t_{ \textup{Blätter} }) - t_{ \textup{Blatt} }
+		\stackrel{?}{=}
+		max(t^{ \prime }_{ \textup{Blätter} }) - t^{ \prime }_{ \textup{Blatt} }
+	\end{equation}
+	Da die maximale Tiefer der Blätter von beiden Bäumen gleich sein muss, können wir sie kürzen und die Vorzeichen tauschen ($ | - max(t_{ \textup{Blätter} }) $ \& $ | * -1 $):
+	\begin{equation}
+		t_{ \textup{Blatt} }
+		\stackrel{?}{=}
+		t^{ \prime }_{ \textup{Blatt} }
+	\end{equation}
+
+	Daraus ist klar, dass die Tiefe des Blattes auch ausreicht und nicht die Höhe benötigt wird.
+
+	\subsubsection{Erstellung des Bilds}
+	Nun kann das Bild erstellt werden, mit dem die Drehfreudigkeit gezeigt oder wiederlegt wird. Dafür wird die davor generierte Liste der Blätter ebenfalls übergeben, aber nur um zu prüfen was die maximale Tiefe ist um dafür die entsprechenden Kästchen von Blättern weit genug zu zeichnen. Sonst gibt es hierfür eine weitere rekursive Funktion, welche das SVG für jeden Knoten/Blatt generiert und dann in eine gemeinsame Datei hinzufügt. Die Elemente für Punkte auf dem Bild werden aber zuerst separat gespeichert, um diese in der SVG-Datei am Ende zu platzieren. Dadurch kann gewährleistet werden, dass die Punkten immer über allen Linien sind und Linien Punkte nicht teilweise verdecken. Über eine SVG-Gruppe kann dies dann einmal um 180° gedreht geklont werden, um die Drehfreudigkeit zu zeigen.
+
+	\section{Umsetzung}
+
+	\subsection{Erkennung der Drehfreudigkeit}
+	Die Verarbeitung des Inputs kann hier gut von Python übernommen werden. Nach jeder geschlossenen Klammer wird ein Komma hinzugefügt um einen tuple-like string zu erhalten. Nun kann die eingebaute Funktion \lstinline[style=main,language=python]|eval()| verwendet werden, um diesen string in einen echten nested tuple zu verwandeln. (\emph{Hinweis:} \lstinline[style=main,language=python]|eval()| kann ebenfalls schädliche Befehle ausführen, dies passiert aber in diesem Rahmen nicht, da nur kontrollierte Inputs verarbeitet werden. Für mehr Sicherheit kann auch die Funktion \lstinline[style=main,language=python]|literal_eval()| des Paketes \lstinline[style=main,language=python]|ast| verwendet werden oder eine weiter rekursive Funktion kann programmiert werden, um dies selber zu implementieren (dann ist der vorherigen Schritt (das Hinzufügen von Kommas) obsolet.). Ich habe mich gegen \lstinline[style=main,language=python]|literal_eval()| entschieden, da hier keine Gefahr besteht und dafür keine neue Bibliothek importiert werden musste.)
+
+	Nun kann durch eine rekursive Funktion mit einer initialen Breite von 1 und einer Tiefe von 0 durch jeden Knoten/Blatt durchgegangen werden, solange bis der Knoten keine weiteren tuples mehr in sich hat, was bedeutet, dass dieser Knoten ein Blatt sein muss, wofür dann in eine Liste die Breite und Tiefe gespeichert werden kann. Falls der Knoten kein Blatt ist, sondern weitere tuples in sich hat, wird für diese jeweils nochmal die Funktion selber aufgerufen, diesmal mit einer Tiefe, die um eins höher ist als die vorherige Tiefe (s. \ref{tiefe_ausreichend}) und einer Breite von der aktuellen Breite $/$ die Anzahl der Kinder dieses Knotens.
+
+	Wurde nun diese Liste erstellt, kann diese einmal gespiegelt (bzw. um 180° gedreht) werden und nur wenn die beiden Listen übereinstimmen ist der gegebene Baum drehfreudig.
+
+	\subsection{Erstellung des Bilds}
+	Eine weitere rekursive Funktion wird benutzt, um für jeden Knoten die zugehörigen SVG-Elemente zu zeichnen. Dazu wird von der Berechnung der Drehfreudigkeit die maximale Tiefe eines Knotens genommen, um immer zu wissen, wie weit ein Kästchen gezeichnet werden muss.
+
+	Jeder Knoten erstellt, je nachdem ob er ein Blatt ist oder nicht, das entsprechende SVG und speichert es zuerst in einer Variable. Bei Blättern ist die Besonderheit, dass das Kästchen bis zur maximalen Tiefe gezogen wird. Wenn es kein Blatt ist, wird erstmal rekursiv das SVG für alle Kind-Elemente generiert. Dann wird noch, falls in der Funktion eine Position des Eltern-Knoten übergeben wurde, eine Verbindungslinie zu diesem Knoten gezogen.
+
+	Zuletzt werden alle generierten Elemente in eine SVG-Gruppe gepackt, welche dann über ein \lstinline[style=main,language=xml]|<use>|-tag geklont und gedreht wird.
+
+	\section{Beispiele}
+	\begin{center}
+	\begin{tabular}{|c||c|}
+		\hline
+		Beispiel & Drehfreudig? \\
+		\hline \hline
+		drehfreudig01 & Drehfreudig! \\ \hline
+		drehfreudig02 & Nicht drehfreudig. \\ \hline
+		drehfreudig03 & Nicht drehfreudig. \\ \hline
+		drehfreudig04 & Drehfreudig! \\ \hline
+		drehfreudig05 & Nicht drehfreudig. \\ \hline
+		drehfreudig06 & Nicht drehfreudig. \\ \hline
+		drehfreudig07 & Nicht drehfreudig. \\ \hline
+		drehfreudig08 & Nicht drehfreudig. \\ \hline
+		drehfreudig09 & Nicht drehfreudig. \\ \hline
+		drehfreudig10 & Drehfreudig! \\ \hline
+		drehfreudig11 & Nicht drehfreudig. \\ \hline
+		drehfreudig12 & Nicht drehfreudig. \\ \hline
+		drehfreudig13 & Nicht drehfreudig. \\ \hline
+		drehfreudig14 & Nicht drehfreudig. \\ \hline
+		drehfreudig15 & Nicht drehfreudig. \\ \hline
+	\end{tabular}
+	\end{center}
+	\begin{multicols}{2}
+	\subsection{drehfreudig\_01}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/01.svg}
+	\end{center}
+	\subsection{drehfreudig\_02}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/02.svg}
+	\end{center}
+	\subsection{drehfreudig\_03}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/03.svg}
+	\end{center}
+	\subsection{drehfreudig\_04}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/04.svg}
+	\end{center}
+	\subsection{drehfreudig\_05}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/05.svg}
+	\end{center}
+	\subsection{drehfreudig\_06}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/06.svg}
+	\end{center}
+	\subsection{drehfreudig\_07}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/07.svg}
+	\end{center}
+	\subsection{drehfreudig\_11}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/11.svg}
+	\end{center}
+	\end{multicols}
+	\subsection{drehfreudig\_08}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/08.svg}
+	\end{center}
+	\subsection{drehfreudig\_09}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/09.svg}
+	\end{center}
+	\subsection{drehfreudig\_10}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/10.svg}
+	\end{center}
+	\subsection{drehfreudig\_12}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/12.svg}
+	\end{center}
+	\subsection{drehfreudig\_13}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/13.svg}
+	\end{center}
+	\subsection{drehfreudig\_14}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/14.svg}
+	\end{center}
+	\subsection{drehfreudig\_15}
+	\begin{center}
+	\includesvg[width=\columnwidth]{./img/15.svg}
+	\end{center}
+
+	\pagebreak
+	\section{Quelltext}
+	\begin{lstlisting}[style=main,language=python]
+def main():
+	with open('./inp/drehfreudig16.txt', 'r') as f:
+		txt = f.read().strip()
+	tree = eval(txt.replace(')', '),').strip(',')) # use ast.literal_eval() for safer alternative
+	leafs = explore_leafs(tree)
+	print('Drehfreudig!' if leafs == leafs[::-1] else 'Nicht drehfreudig.')
+	csvg(tree, leafs)
+
+
+def explore_leafs(tree: tuple[tuple | None], width: float = 1, depth: int = 0) -> tuple[tuple[float, int]]:
+	if not tree:
+		return ((width, depth),)
+	else:
+		leafs = []
+		for node in tree:
+			leafs.extend(explore_leafs(node, width / len(tree), depth + 1))
+		return tuple(leafs)
+
+
+def rcsvg(tree: tuple[tuple | None], width: float = 1, depth: int = 0, maxd: int = 0, pos: tuple[float, float] = (0, 0), ppos: tuple[float, float] | None = None) -> tuple[str, str]:
+	if tree:
+		ls = f'''
+		<line x1="{pos[0]}" y1="{pos[1]}" x2="{pos[0] + width}" y2="{pos[1]}" stroke="#000000" stroke-width="0.03125"></line>
+		<line x1="{pos[0]}" y1="{pos[1]}" x2="{pos[0]}" y2="{pos[1] + 1}" stroke="#000000" stroke-width="0.03125"></line>
+		<line x1="{pos[0] + width}" y1="{pos[1]}" x2="{pos[0] + width}" y2="{pos[1] + 1}" stroke="#000000" stroke-width="0.03125"></line>
+		'''.strip().replace('\n', '').replace('\t', '')
+		cs = f'''
+		<circle cx="{pos[0] + width / 2}" cy="{pos[1] + .5}" r="0.0625" fill="#ff0000"></circle>
+		'''.strip().replace('\n', '').replace('\t', '')
+		xo = 0
+		for node in tree:
+			gen = rcsvg(node, width = width / len(tree), depth = depth + 1, maxd = maxd, pos = (pos[0] + xo, pos[1] + 1), ppos = (pos[0] + width / 2, pos[1] + .5))
+			ls += gen[0]
+			cs += gen[1]
+			xo += width / len(tree)
+	else:
+		ls = f'''
+		<line x1="{pos[0]}" y1="{pos[1]}" x2="{pos[0] + width}" y2="{pos[1]}" stroke="#000000" stroke-width="0.03125"></line>
+		<line x1="{pos[0]}" y1="{pos[1]}" x2="{pos[0]}" y2="{maxd + 1}" stroke="#000000" stroke-width="0.03125"></line>
+		<line x1="{pos[0] + width}" y1="{pos[1]}" x2="{pos[0] + width}" y2="{maxd + 1}" stroke="#000000" stroke-width="0.03125"></line>
+		<line x1="{pos[0]}" y1="{maxd + 1}" x2="{pos[0] + width}" y2="{maxd + 1}" stroke="#000000" stroke-width="0.0625"></line>
+		'''.strip().replace('\n', '').replace('\t', '')
+		cs = f'''
+		<circle cx="{pos[0] + width / 2}" cy="{pos[1] + .5}" r="0.0625" fill="#ff0000"></circle>
+		'''.strip().replace('\n', '').replace('\t', '')
+	if ppos: # ppos: parent position
+		ls += f'<line x1="{ppos[0]}" y1="{ppos[1]}" x2="{pos[0] + width / 2}" y2="{pos[1] + .5}" stroke="#0000ff" stroke-width="0.0625"></line>' # move to fg / topmost layer?
+	return ls, cs # ls: line elements; cs: circles (dots)
+
+
+def csvg(tree: tuple[tuple | None], leafs: tuple[tuple[float, int]]):
+	y = (max(leaf[1] for leaf in leafs) + 1) * 2
+	x = len(leafs)
+	gen = '\n'.join(rcsvg(tree, width = x, maxd = max(leaf[1] for leaf in leafs)))
+	svg = f'''
+	<svg width="{x}cm" height="{y}cm" viewBox="0, 0, {x}, {y}" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<g id="graph">
+			{gen}
+		</g>
+		<use href="#graph" y="{y / 2}" transform=" translate(0, {y / 2}) rotate(180, {x / 2}, {y / 2})"></use>
+	</svg>
+	'''.strip().replace('\n', '').replace('\t', '') # BUG: transform doesn't work yet
+
+	with open('./output.svg', 'w') as f:
+		f.write(svg)
+
+
+if __name__ == '__main__':
+	main()
+	\end{lstlisting}
+\end{document}
