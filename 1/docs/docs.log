@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.1)  17 NOV 2025 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.1)  17 NOV 2025 19:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -366,20 +366,20 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 (./docs.aux)
 \openout1 = `docs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -439,11 +439,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 34.
+(Font)              <12> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 34.
+(Font)              <8> on input line 36.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 34.
+(Font)              <6> on input line 36.
 
 (./docs.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -457,82 +457,200 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
+Package svg Info: Calling Inkscape on input line 48.
+runsystem(inkscape "./img/eig01.svg" -D --export-latex --export-filename="eig01
+_svg-tex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "eig01_svg-tex.pdf" "./svg-inkscape/eig01_svg-tex.pdf")...executed
+.
+
+runsystem(mv "eig01_svg-tex.pdf_tex" "./svg-inkscape/eig01_svg-tex.pdf_tex")...
+executed.
+
 Package svg Info: Last page of `./svg-inkscape/eig01_svg-tex.pdf' is 1 on input
- line 46.
+ line 48.
 
 (./svg-inkscape/eig01_svg-tex.pdf_tex
-<./svg-inkscape/eig01_svg-tex.pdf, id=5, page=1, 342.32222pt x 228.5112pt>
+<./svg-inkscape/eig01_svg-tex.pdf, id=5, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/eig01_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/eig01_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/eig01_svg-tex.pdf , page1 used on input
  line 56.
-(pdftex.def)             Requested size: 483.69687pt x 322.89119pt.
+(pdftex.def)             Requested size: 341.43306pt x 171.05171pt.
 )
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./svg-inkscape/eig01_svg-t
+ex.pdf>]
 
-[2 <./svg-inkscape/eig01_svg-tex.pdf>]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[2] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 9
-5.
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 95.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 97.
+Package svg Info: Calling Inkscape on input line 125.
+runsystem(inkscape "./img/01.svg" -D --export-latex --export-filename="01_svg-t
+ex.pdf")...executed.
 
+runsystem(mkdir -p "./svg-inkscape/")...executed.
 
-[3]
+runsystem(mv "01_svg-tex.pdf" "./svg-inkscape/01_svg-tex.pdf")...executed.
+
+runsystem(mv "01_svg-tex.pdf_tex" "./svg-inkscape/01_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/01_svg-tex.pdf' is 1 on input li
-ne 123.
- (./svg-inkscape/01_svg-tex.pdf_tex
-<./svg-inkscape/01_svg-tex.pdf, id=31, page=1, 456.13326pt x 228.5112pt>
+ne 125.
+
+(./svg-inkscape/01_svg-tex.pdf_tex
+<./svg-inkscape/01_svg-tex.pdf, id=28, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/01_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/01_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/01_svg-tex.pdf , page1 used on input li
 ne 56.
 (pdftex.def)             Requested size: 236.84843pt x 118.65564pt.
 )
+Package svg Info: Calling Inkscape on input line 129.
+runsystem(inkscape "./img/02.svg" -D --export-latex --export-filename="02_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "02_svg-tex.pdf" "./svg-inkscape/02_svg-tex.pdf")...executed.
+
+runsystem(mv "02_svg-tex.pdf_tex" "./svg-inkscape/02_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/02_svg-tex.pdf' is 1 on input li
-ne 127.
+ne 129.
  (./svg-inkscape/02_svg-tex.pdf_tex
-<./svg-inkscape/02_svg-tex.pdf, id=33, page=1, 143.15292pt x 171.60568pt>
+<./svg-inkscape/02_svg-tex.pdf, id=30, page=1, 342.32222pt x 171.60568pt>
 File: ./svg-inkscape/02_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/02_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/02_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 283.94626pt.
+(pdftex.def)             Requested size: 236.84843pt x 118.73273pt.
 )
+Package svg Info: Calling Inkscape on input line 133.
+runsystem(inkscape "./img/03.svg" -D --export-latex --export-filename="03_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "03_svg-tex.pdf" "./svg-inkscape/03_svg-tex.pdf")...executed.
+
+runsystem(mv "03_svg-tex.pdf_tex" "./svg-inkscape/03_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/03_svg-tex.pdf' is 1 on input li
-ne 131.
+ne 133.
 
 (./svg-inkscape/03_svg-tex.pdf_tex
-<./svg-inkscape/03_svg-tex.pdf, id=35, page=1, 143.15292pt x 228.5112pt>
+<./svg-inkscape/03_svg-tex.pdf, id=32, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/03_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/03_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/03_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 378.1046pt.
+(pdftex.def)             Requested size: 236.84843pt x 118.65564pt.
 )
+Package svg Info: Calling Inkscape on input line 137.
+runsystem(inkscape "./img/04.svg" -D --export-latex --export-filename="04_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "04_svg-tex.pdf" "./svg-inkscape/04_svg-tex.pdf")...executed.
+
+runsystem(mv "04_svg-tex.pdf_tex" "./svg-inkscape/04_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/04_svg-tex.pdf' is 1 on input li
-ne 135.
+ne 137.
  (./svg-inkscape/04_svg-tex.pdf_tex
-<./svg-inkscape/04_svg-tex.pdf, id=37, page=1, 171.60568pt x 171.60568pt>
+<./svg-inkscape/04_svg-tex.pdf, id=34, page=1, 342.32222pt x 171.60568pt>
 File: ./svg-inkscape/04_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/04_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/04_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 236.86322pt.
+(pdftex.def)             Requested size: 236.84843pt x 118.73273pt.
 )
-[4 <./svg-inkscape/01_svg-tex.pdf> <./svg-inkscape/02_svg-tex.pdf
+Package svg Info: Calling Inkscape on input line 141.
+runsystem(inkscape "./img/05.svg" -D --export-latex --export-filename="05_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "05_svg-tex.pdf" "./svg-inkscape/05_svg-tex.pdf")...executed.
+
+runsystem(mv "05_svg-tex.pdf_tex" "./svg-inkscape/05_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/05_svg-tex.pdf' is 1 on input li
+ne 141.
+
+(./svg-inkscape/05_svg-tex.pdf_tex
+<./svg-inkscape/05_svg-tex.pdf, id=36, page=1, 342.32222pt x 171.60568pt>
+File: ./svg-inkscape/05_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/05_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/05_svg-tex.pdf , page1 used on input li
+ne 56.
+(pdftex.def)             Requested size: 236.84843pt x 118.73273pt.
+)
+Package svg Info: Calling Inkscape on input line 145.
+runsystem(inkscape "./img/06.svg" -D --export-latex --export-filename="06_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "06_svg-tex.pdf" "./svg-inkscape/06_svg-tex.pdf")...executed.
+
+runsystem(mv "06_svg-tex.pdf_tex" "./svg-inkscape/06_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/06_svg-tex.pdf' is 1 on input li
+ne 145.
+ (./svg-inkscape/06_svg-tex.pdf_tex
+<./svg-inkscape/06_svg-tex.pdf, id=38, page=1, 456.13326pt x 228.5112pt>
+File: ./svg-inkscape/06_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/06_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/06_svg-tex.pdf , page1 used on input li
+ne 56.
+(pdftex.def)             Requested size: 236.84843pt x 118.65564pt.
+)
+Package svg Info: Calling Inkscape on input line 149.
+runsystem(inkscape "./img/07.svg" -D --export-latex --export-filename="07_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "07_svg-tex.pdf" "./svg-inkscape/07_svg-tex.pdf")...executed.
+
+runsystem(mv "07_svg-tex.pdf_tex" "./svg-inkscape/07_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/07_svg-tex.pdf' is 1 on input li
+ne 149.
+
+(./svg-inkscape/07_svg-tex.pdf_tex
+<./svg-inkscape/07_svg-tex.pdf, id=40, page=1, 683.75531pt x 342.32222pt>
+File: ./svg-inkscape/07_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/07_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/07_svg-tex.pdf , page1 used on input li
+ne 56.
+(pdftex.def)             Requested size: 236.84843pt x 118.57661pt.
+) [3 <./svg-inkscape/01_svg-tex.pdf> <./svg-inkscape/02_svg-tex.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/02_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
@@ -540,61 +658,11 @@ lusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/03_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
->]
-Package svg Info: Last page of `./svg-inkscape/05_svg-tex.pdf' is 1 on input li
-ne 139.
- (./svg-inkscape/05_svg-tex.pdf_tex
-<./svg-inkscape/05_svg-tex.pdf, id=46, page=1, 256.96396pt x 171.60568pt>
-File: ./svg-inkscape/05_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/05_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/05_svg-tex.pdf , page1 used on input li
-ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 158.17764pt.
-)
-Package svg Info: Last page of `./svg-inkscape/06_svg-tex.pdf' is 1 on input li
-ne 143.
- (./svg-inkscape/06_svg-tex.pdf_tex
-<./svg-inkscape/06_svg-tex.pdf, id=48, page=1, 342.32222pt x 228.5112pt>
-File: ./svg-inkscape/06_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/06_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/06_svg-tex.pdf , page1 used on input li
-ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 158.10524pt.
-)
-Package svg Info: Last page of `./svg-inkscape/07_svg-tex.pdf' is 1 on input li
-ne 147.
+> <./svg-inkscape/04_svg-tex.pdf
 
-(./svg-inkscape/07_svg-tex.pdf_tex
-<./svg-inkscape/07_svg-tex.pdf, id=50, page=1, 256.96396pt x 342.32222pt>
-File: ./svg-inkscape/07_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/07_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/07_svg-tex.pdf , page1 used on input li
-ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 315.53572pt.
-)
-Package svg Info: Last page of `./svg-inkscape/11_svg-tex.pdf' is 1 on input li
-ne 151.
- (./svg-inkscape/11_svg-tex.pdf_tex
-<./svg-inkscape/11_svg-tex.pdf, id=52, page=1, 370.77498pt x 342.32222pt>
-File: ./svg-inkscape/11_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/11_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/11_svg-tex.pdf , page1 used on input li
-ne 56.
-(pdftex.def)             Requested size: 236.84843pt x 218.67282pt.
-)
-Package svg Info: Last page of `./svg-inkscape/08_svg-tex.pdf' is 1 on input li
-ne 156.
-
-(./svg-inkscape/08_svg-tex.pdf_tex
-<./svg-inkscape/08_svg-tex.pdf, id=54, page=1, 598.39705pt x 228.5112pt>
-File: ./svg-inkscape/08_svg-tex.pdf Graphic file (type pdf)
-<use ./svg-inkscape/08_svg-tex.pdf, page 1>
-Package pdftex.def Info: ./svg-inkscape/08_svg-tex.pdf , page1 used on input li
-ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 184.71646pt.
-)
-
-[5 <./svg-inkscape/04_svg-tex.pdf> <./svg-inkscape/05_svg-tex.pdf
+pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/04_svg-tex.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/05_svg-tex.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/05_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
@@ -602,122 +670,224 @@ lusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/06_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
-> <./svg-inkscape/07_svg-tex.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/07_svg-tex.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
-> <./svg-inkscape/11_svg-tex.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/11_svg-tex.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
 >]
+Package svg Info: Calling Inkscape on input line 153.
+runsystem(inkscape "./img/11.svg" -D --export-latex --export-filename="11_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "11_svg-tex.pdf" "./svg-inkscape/11_svg-tex.pdf")...executed.
+
+runsystem(mv "11_svg-tex.pdf_tex" "./svg-inkscape/11_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/11_svg-tex.pdf' is 1 on input li
+ne 153.
+ (./svg-inkscape/11_svg-tex.pdf_tex
+<./svg-inkscape/11_svg-tex.pdf, id=52, page=1, 683.75531pt x 342.32222pt>
+File: ./svg-inkscape/11_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/11_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/11_svg-tex.pdf , page1 used on input li
+ne 56.
+(pdftex.def)             Requested size: 236.84843pt x 118.57661pt.
+)
+Package svg Info: Calling Inkscape on input line 158.
+runsystem(inkscape "./img/08.svg" -D --export-latex --export-filename="08_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "08_svg-tex.pdf" "./svg-inkscape/08_svg-tex.pdf")...executed.
+
+runsystem(mv "08_svg-tex.pdf_tex" "./svg-inkscape/08_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/08_svg-tex.pdf' is 1 on input li
+ne 158.
+ (./svg-inkscape/08_svg-tex.pdf_tex
+<./svg-inkscape/08_svg-tex.pdf, id=54, page=1, 456.13326pt x 228.5112pt>
+File: ./svg-inkscape/08_svg-tex.pdf Graphic file (type pdf)
+<use ./svg-inkscape/08_svg-tex.pdf, page 1>
+Package pdftex.def Info: ./svg-inkscape/08_svg-tex.pdf , page1 used on input li
+ne 56.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
+)
+Package svg Info: Calling Inkscape on input line 162.
+runsystem(inkscape "./img/09.svg" -D --export-latex --export-filename="09_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "09_svg-tex.pdf" "./svg-inkscape/09_svg-tex.pdf")...executed.
+
+runsystem(mv "09_svg-tex.pdf_tex" "./svg-inkscape/09_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/09_svg-tex.pdf' is 1 on input li
-ne 160.
- (./svg-inkscape/09_svg-tex.pdf_tex
-<./svg-inkscape/09_svg-tex.pdf, id=65, page=1, 541.49152pt x 228.5112pt>
+ne 162.
+
+(./svg-inkscape/09_svg-tex.pdf_tex
+<./svg-inkscape/09_svg-tex.pdf, id=56, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/09_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/09_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/09_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 204.12746pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
 )
+Package svg Info: Calling Inkscape on input line 166.
+runsystem(inkscape "./img/10.svg" -D --export-latex --export-filename="10_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "10_svg-tex.pdf" "./svg-inkscape/10_svg-tex.pdf")...executed.
+
+runsystem(mv "10_svg-tex.pdf_tex" "./svg-inkscape/10_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/10_svg-tex.pdf' is 1 on input li
-ne 164.
+ne 166.
  (./svg-inkscape/10_svg-tex.pdf_tex
-<./svg-inkscape/10_svg-tex.pdf, id=67, page=1, 1110.54657pt x 228.5112pt>
+<./svg-inkscape/10_svg-tex.pdf, id=58, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/10_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/10_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/10_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 99.52708pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
 )
-Package svg Info: Last page of `./svg-inkscape/12_svg-tex.pdf' is 1 on input li
-ne 168.
 
-(./svg-inkscape/12_svg-tex.pdf_tex
-<./svg-inkscape/12_svg-tex.pdf, id=69, page=1, 1082.09384pt x 228.5112pt>
+[4 <./svg-inkscape/07_svg-tex.pdf> <./svg-inkscape/11_svg-tex.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/11_svg-tex.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/08_svg-tex.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/08_svg-tex.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+> <./svg-inkscape/09_svg-tex.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/09_svg-tex.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>]
+Package svg Info: Calling Inkscape on input line 170.
+runsystem(inkscape "./img/12.svg" -D --export-latex --export-filename="12_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "12_svg-tex.pdf" "./svg-inkscape/12_svg-tex.pdf")...executed.
+
+runsystem(mv "12_svg-tex.pdf_tex" "./svg-inkscape/12_svg-tex.pdf_tex")...execut
+ed.
+
+Package svg Info: Last page of `./svg-inkscape/12_svg-tex.pdf' is 1 on input li
+ne 170.
+ (./svg-inkscape/12_svg-tex.pdf_tex
+<./svg-inkscape/12_svg-tex.pdf, id=68, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/12_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/12_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/12_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 102.14566pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
 )
+Package svg Info: Calling Inkscape on input line 174.
+runsystem(inkscape "./img/13.svg" -D --export-latex --export-filename="13_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "13_svg-tex.pdf" "./svg-inkscape/13_svg-tex.pdf")...executed.
+
+runsystem(mv "13_svg-tex.pdf_tex" "./svg-inkscape/13_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/13_svg-tex.pdf' is 1 on input li
-ne 172.
+ne 174.
  (./svg-inkscape/13_svg-tex.pdf_tex
-<./svg-inkscape/13_svg-tex.pdf, id=71, page=1, 2049.48755pt x 285.41672pt>
+<./svg-inkscape/13_svg-tex.pdf, id=70, page=1, 569.94424pt x 285.41672pt>
 File: ./svg-inkscape/13_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/13_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/13_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 67.36037pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.22644pt.
 )
 
-[6 <./svg-inkscape/08_svg-tex.pdf> <./svg-inkscape/09_svg-tex.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/09_svg-tex.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
-> <./svg-inkscape/10_svg-tex.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/10_svg-tex.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
-> <./svg-inkscape/12_svg-tex.pdf
+[5 <./svg-inkscape/10_svg-tex.pdf> <./svg-inkscape/12_svg-tex.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/12_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
 >]
+Package svg Info: Calling Inkscape on input line 178.
+runsystem(inkscape "./img/14.svg" -D --export-latex --export-filename="14_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "14_svg-tex.pdf" "./svg-inkscape/14_svg-tex.pdf")...executed.
+
+runsystem(mv "14_svg-tex.pdf_tex" "./svg-inkscape/14_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/14_svg-tex.pdf' is 1 on input li
-ne 176.
+ne 178.
  (./svg-inkscape/14_svg-tex.pdf_tex
-<./svg-inkscape/14_svg-tex.pdf, id=81, page=1, 712.20804pt x 228.5112pt>
+<./svg-inkscape/14_svg-tex.pdf, id=78, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/14_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/14_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/14_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 155.19725pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
 )
+Package svg Info: Calling Inkscape on input line 182.
+runsystem(inkscape "./img/15.svg" -D --export-latex --export-filename="15_svg-t
+ex.pdf")...executed.
+
+runsystem(mkdir -p "./svg-inkscape/")...executed.
+
+runsystem(mv "15_svg-tex.pdf" "./svg-inkscape/15_svg-tex.pdf")...executed.
+
+runsystem(mv "15_svg-tex.pdf_tex" "./svg-inkscape/15_svg-tex.pdf_tex")...execut
+ed.
+
 Package svg Info: Last page of `./svg-inkscape/15_svg-tex.pdf' is 1 on input li
-ne 180.
+ne 182.
  (./svg-inkscape/15_svg-tex.pdf_tex
-<./svg-inkscape/15_svg-tex.pdf, id=83, page=1, 399.22772pt x 228.5112pt>
+<./svg-inkscape/15_svg-tex.pdf, id=80, page=1, 456.13326pt x 228.5112pt>
 File: ./svg-inkscape/15_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/15_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/15_svg-tex.pdf , page1 used on input li
 ne 56.
-(pdftex.def)             Requested size: 483.69687pt x 276.862pt.
+(pdftex.def)             Requested size: 483.69687pt x 242.32181pt.
 )
 
-[7 <./svg-inkscape/13_svg-tex.pdf> <./svg-inkscape/14_svg-tex.pdf
+[6 <./svg-inkscape/13_svg-tex.pdf> <./svg-inkscape/14_svg-tex.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/14_svg-tex.pdf): PDF inc
 lusion: multiple pdfs with page group included in a single page
-> <./svg-inkscape/15_svg-tex.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./svg-inkscape/15_svg-tex.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
 >]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-95.
+96.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 196.
 
 
-[8]
+[7 <./svg-inkscape/15_svg-tex.pdf>]
 
-[9] (./docs.aux)
+[8] (./docs.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8285 strings out of 475125
- 149980 string characters out of 5764131
- 1347836 words of memory out of 5000000
- 31094 multiletter control sequences out of 15000+600000
+ 8333 strings out of 475125
+ 151061 string characters out of 5764131
+ 1331794 words of memory out of 5000000
+ 31142 multiletter control sequences out of 15000+600000
  563773 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,14n,93p,1094b,1697s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -732,10 +902,10 @@ type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb>
-Output written on docs.pdf (9 pages, 242896 bytes).
+Output written on docs.pdf (8 pages, 242106 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

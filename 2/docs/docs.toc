@@ -1,0 +1,12 @@
+\babel@toc {german}{}\relax 
+\contentsline {section}{\numberline {1}Lösungsidee}{1}{}%
+\contentsline {section}{\numberline {2}Umsetzung}{1}{}%
+\contentsline {section}{\numberline {3}Beispiele}{2}{}%
+\contentsline {subsection}{\numberline {3.1}choreo01}{2}{}%
+\contentsline {subsection}{\numberline {3.2}choreo02}{2}{}%
+\contentsline {subsection}{\numberline {3.3}choreo03}{2}{}%
+\contentsline {subsection}{\numberline {3.4}choreo04}{2}{}%
+\contentsline {subsection}{\numberline {3.5}choreo05}{3}{}%
+\contentsline {subsection}{\numberline {3.6}choreo06}{3}{}%
+\contentsline {subsection}{\numberline {3.7}choreoA}{3}{}%
+\contentsline {section}{\numberline {4}Quelltext}{4}{}%

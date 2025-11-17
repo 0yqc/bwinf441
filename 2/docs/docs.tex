@@ -1,0 +1,198 @@
+\documentclass[a4paper]{article}
+\title{44. Bundeswettbewerb Informatik - 1. Runde / 2. Aufgabe}
+\author{Luna Hagemann (Team-ID 00008 (Einzelteam), Teilnahme-ID 78245)}
+
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage[german]{babel}
+\usepackage{listings,color,array}
+
+\definecolor{gray}{rgb}{.25,.25,.25}
+\definecolor{blue}{rgb}{0,0,.5}
+\definecolor{green}{rgb}{0,.5,0}
+\definecolor{purple}{rgb}{.5,0,1}
+\lstdefinestyle{main}{
+	language=Python,
+	%
+	tabsize=4,
+	frame=single,
+	%
+	numbers=left,
+	numberstyle=\small,
+	numberstyle=\color{gray},
+	firstnumber=1,
+	stepnumber=1,
+	%
+	commentstyle=\color{green},
+	keywordstyle=\color{purple},
+	stringstyle=\color{blue},
+	%
+	breaklines=true,
+}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\section{Lösungsidee}
+	Dadurch, dass die Daten noch nicht zu groß sind, funktioniert ein Brute-Force-Algorithmus, um die entsprechenden Choreos zu finden. Dieser Algorithmus nimmt eine Taktzahl als Argument und gibt eine Choreographie ab diesem Zeitpunkt zurück. Jede mögl. Figur wird jetzt in diesem Level durchgegangen und jeweils von der insgesamten Taktzahl abgezogen. Wäre die Taktzahl dann negativ, wird die Figur übersprungen und die nächste wird überprüft. Ist die Taktzahl positiv, wird mit den verbleibenden Takten wieder die Funktion aufgerufen und die zurückgegebenen Choreographien werden dann jeweils mit der aktuellen Figur als Choreographie gespeichert. Ist die Taktzahl genau 0, wird überprüft, ob jede*r Tänzer*in wieder am eigenen Platz ist und, wenn dies der Fall ist, diese Figur als Choreographie gespeichert. Nachdem alle Figuren so geprüft wurden, werden alle gespeicherten Choreographien zurückgegeben. So kommt jede mögl. Choreographie bis an den Anfang. Sind alle erlaubten Choreographien erstellt, wird geguckt, welche nach den Kriterien am besten sind, bzw. es wird ausgegeben, dass keine Choreos gefunden werden konnten.
+
+	\section{Umsetzung}
+	Nachdem der Input verarbeitet wird, werden alle Figuren effizient in einer globalen Liste gespeichert. Damit die rekursive Funktion gut läuft, muss neben der Taktzahl auch noch die Liste aller Figuren als Argument übermittelt werden, sowie die aktuelle Position, diesmal als Liste von Zahlen von 0 bis 15 (0 stand am Anfang ganz links, 15 ganz rechts), diese wird dann immer mit der aktuellen Figur verändert, um am Ende zu prüfen, ob die Choreographie auch am Ende gleich endet. Figuren werden generell als dictonary gespeichert, mit den Feldern 'name', 'bars' (Anzahl an Takten (engl. bars)) und 'pos\_alph' (Position in alphabetischer Schreibweise).
+
+	\section{Beispiele}
+	\subsection{choreo01}
+	\begin{tabular}{|r||l|m{10cm}|}
+		\hline
+		& Anzahl & Figuren \\
+		\hline \hline
+		max. versch. Figuren & 2 & Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up \\ \hline
+		max. Figuren & 16 & Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four \\ \hline
+		min. Figuren & 8 & Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up \\ \hline
+		max. Distanz & 384 & Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four, Cast\_Four \\ \hline
+		min. Distanz & 240 & Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up, Cast\_Up \\ \hline
+	\end{tabular}
+	\subsection{choreo02}
+	\begin{tabular}{|r||l|m{10cm}|}
+	\hline
+	& Anzahl & Figuren \\
+	\hline \hline
+	max. versch. Figuren & 4 & Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_2, Cycle\_2, Cycle\_2, Cycle\_3, Cycle\_4, Cycle\_4, Cycle\_4 \\ \hline
+	max. Figuren & 19 & Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_2, Cycle\_2, Cycle\_4 \\ \hline
+	min. Figuren & 8 & Cycle\_3, Cycle\_3, Cycle\_3, Cycle\_3, Cycle\_3, Cycle\_3, Cycle\_3, Cycle\_3 \\ \hline
+	max. Distanz & 688 & Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_2, Cycle\_2, Cycle\_4 \\ \hline
+	min. Distanz & 624 & Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_1, Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4 \\ \hline
+	\end{tabular}
+	\subsection{choreo03}
+	Keine legale Choreographie konnte gefunden werden.
+	\subsection{choreo04}
+	Keine legale Choreographie konnte gefunden werden.
+	\subsection{choreo05}
+	\begin{tabular}{|r||l|m{10cm}|}
+	\hline
+	& Anzahl & Figuren \\
+	\hline \hline
+	max. versch. Figuren & 1 &  Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist \\ \hline
+	max. Figuren & 24 &  Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist \\ \hline
+	min. Figuren & 24 &  Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist \\ \hline
+	max. Distanz & 1728 &  Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist \\ \hline
+	min. Distanz & 1728 &  Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist, Hip\_Twist \\ \hline
+	\end{tabular}
+	\subsection{choreo06}
+	\begin{tabular}{|r||l|m{10cm}|}
+	\hline
+	& Anzahl & Figuren \\
+	\hline \hline
+	max. versch. Figuren & 4 & Cycle\_4, Cycle\_4, Cycle\_4, Pairs, Cycle\_Back, Cycle\_Back, Pairs, Cycle\_Back, Sides, Cycle\_Back \\ \hline
+	max. Figuren & 16 &  Pairs, Pairs, Pairs, Pairs, Pairs, Pairs, Pairs, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Pairs \\ \hline
+	min. Figuren & 4 & Sides, Sides, Sides, Sides \\ \hline
+	max. Distanz & 768 & Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4, Cycle\_4 \\ \hline
+	min. Distanz & 368 & Pairs, Pairs, Pairs, Pairs, Pairs, Pairs, Pairs, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Cycle\_Back, Pairs \\ \hline
+	\end{tabular}
+	\subsection{choreoA}
+	Keine legale Choreographie konnte gefunden werden.
+
+	\pagebreak
+	\section{Quelltext}
+	\begin{lstlisting}[style=main,language=python]
+alphabet = {
+	'A': 0,
+	'B': 1,
+	'C': 2,
+	'D': 3,
+	'E': 4,
+	'F': 5,
+	'G': 6,
+	'H': 7,
+	'I': 8,
+	'J': 9,
+	'K': 10,
+	'L': 11,
+	'M': 12,
+	'N': 13,
+	'O': 14,
+	'P': 15,
+}
+gpos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+
+def explore(bars: int, figs: list[dict[str, str | int]], pos: list[int]) -> list[tuple[dict[str, str | int]]]:
+	choreos = []
+	for fig in figs:
+		rem = bars
+		rem -= fig['bars']
+		if rem == 0:
+			if apply_fig(pos, fig['pos_alph']) == gpos:
+				choreos.append((fig,))
+		elif rem < 0:
+			continue
+		else:
+			pos = apply_fig(pos, fig['pos_alph'])
+			ret = explore(rem, figs, pos)
+			for choreo in ret:
+				choreos.append((fig, *choreo))
+	return choreos
+
+
+def apply_fig(pos: list[int], fig: str) -> list[int]:
+	new_pos = []
+	for char in fig:
+		new_pos.append(pos[alphabet[char]])
+	return new_pos
+
+def calc_distance(fig: str) -> int:
+	distance = 0
+	for i, char in enumerate(fig):
+		distance += abs(alphabet[char] - i)
+	return distance
+
+
+with open('./inp/choreo06.txt', 'r') as f:
+	bars = int(f.readline().strip())
+	figs = []
+	for _ in range(int(f.readline().strip())):
+		raw = f.readline().strip().split(' ')
+		figs.append({'name': raw[0], 'bars': int(raw[1]), 'pos_alph': raw[2]})
+
+choreos = explore(bars, figs, gpos)
+
+if not choreos:
+	print('No valid choreo found.')
+	exit()
+
+high = {
+	'max_dif': [0, None],
+	'max': [0, None],
+	'min': [float('inf'), None],
+	'max_dis': [0, None],
+	'min_dis': [float('inf'), None],
+}
+
+for choreo in choreos:
+	figs = []
+	n_dif = 0
+	n_figs = 0
+	dis = 0
+	for fig in choreo:
+		dis += calc_distance(fig['pos_alph'])
+		n_figs += 1
+		if not fig['name'] in figs:
+			figs.append(fig['name'])
+			n_dif += 1
+	if n_dif > high['max_dif'][0]:
+		high['max_dif'] = [n_dif, choreo]
+	if n_figs > high['max'][0]:
+		high['max'] = [n_figs, choreo]
+	if n_figs < high['min'][0]:
+		high['min'] = [n_figs, choreo]
+	if dis > high['max_dis'][0]:
+		high['max_dis'] = [dis, choreo]
+	if dis < high['min_dis'][0]:
+		high['min_dis'] = [dis, choreo]
+
+# OUTPUT
+
+	\end{lstlisting}
+\end{document}
