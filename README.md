@@ -8,3 +8,9 @@ The BWInf is short for Bundeswettbewerb Informatik, a German country-wide inform
 # Installation
 
 No further dependencies are needed, just run the Python files. As I use Linux, I can't provide executables for Windows and have decided against making them for Linux due to not many people using linux and Python being easily run.
+
+# Problems
+
+The problems are stated in German in `./Aufgaben441.pdf` and the problems Junioraufgabe 1 & 2 (`./j1/` and `./j2/` respectively) as well as Aufgabe 1 & 2 (`./1/` and `./2/`) were done by me.
+
+There are example inputs located at `./inp/` for every problem and the outputs will most often be in the build log (via print()-statements) or in the case of problem 1 in `./output.svg`
